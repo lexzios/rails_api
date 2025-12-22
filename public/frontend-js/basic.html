@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Scores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>High Scores</h1>
+        <table id="highscores-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="highscores">
+                <!-- High score entries will be added here (e.g., via JavaScript) -->
+                
+            </tbody>
+            <p id="loading-indicator">Loading...</p>
+            <button onclick="loadScore()">Refresh Score List</button>
+        </table>
+        <form id="highscore-form">
+            <input type="text" id="player-id" placeholder="Code" required><br>
+            <input type="text" id="player-name" placeholder="Player Name" required><br>
+            <input type="number" id="player-score" placeholder="Score" required><br>
+            <button type="submit" class="home-btn">Submit Score</button>        
+        </form>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="score-loader.js"></script> 
+    <script src="score-add.js"></script> 
+</html>
