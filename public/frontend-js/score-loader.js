@@ -1,4 +1,7 @@
 // Function to fetch the score from the server
+const API_BASE_URL = "http://localhost:3000/api/v1";
+let leaderboardData = [];
+
 function fetchScore() {
     const scoreElement = document.getElementById('highscores');
     const loadingIndicator = document.getElementById('loading-indicator');
@@ -17,6 +20,7 @@ function fetchScore() {
         success: function(data) {
             //const datax = data.json();
             console.log('Highscores loaded:', data);
+            leaderboardData = data;//.json();
             renderHighscores(data); // Function to display data on your UI
         },
         error: function(xhr, status, error) {
@@ -41,10 +45,6 @@ function loadScore() {
     fetchScore();
 }
 
-async function loadHighscores() {
-    
-}
-
 function renderHighscores(data) {
     const scoreElement = document.getElementById('highscores');
     scoreElement.innerHTML = '';
@@ -55,6 +55,16 @@ function renderHighscores(data) {
                 <td>${item.id} ${item.idplay}</td>
                 <td>${item.name}</td>
                 <td>${item.score}</td>
+                <td>
+                    <button onclick="toggleFollow(${item.id})" class="${item.isFollowing ? 'text-red-500' : 'text-blue-500'}">
+                    ${item.isFollowing ? 'Unfollow' : 'Follow'}
+                    </button>
+                    <button onclick="loadFollow('${item.id}')" class="ml-4 text-gray-500">Follower</button>
+                    <br>Share:<br>
+                    <button onclick="shareWA('${item.name}', ${item.score})" class="ml-4 text-gray-500">WA</button>
+                    <button onclick="shareTE('${item.name}', ${item.score})" class="ml-4 text-gray-500">Tele</button>
+                    <button onclick="shareFB('${item.name}', ${item.score})" class="ml-4 text-gray-500">FB</button>
+                </td>
             </tr>
         `;
         scoreElement.insertAdjacentHTML('beforeend', row);

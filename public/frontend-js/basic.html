@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Scores</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -13,9 +14,10 @@
             <thead>
                 <tr>
                     <th>Rank</th>
-                    <th>Code</th>
+                    <th>Follower</th>
                     <th>Name</th>
                     <th>Score</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="highscores">
@@ -32,8 +34,30 @@
             <button type="submit" class="home-btn">Submit Score</button>        
         </form>
     </div>
+
+    
+    <!--div class="container">
+        <section class="profile-card">
+            <h2>My Player Profile</h2>
+            <div class="edit-group">
+                <img id="my-photo" src="https://via.placeholder.com/80" alt="Profile">
+                <input type="text" id="edit-name" placeholder="Edit Name">
+                <input type="number" id="edit-score" placeholder="Edit Score">
+                <button onclick="updateMyProfile()">Update My Stats</button>
+            </div>
+            <div class="share-actions">
+                <p>Share My Score:</p>
+                <button onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></button>
+                <button onclick="share('telegram')"><i class="fab fa-telegram"></i></button>
+                <button onclick="share('facebook')"><i class="fab fa-facebook"></i></button>
+            </div>
+        </section-->
+
 </body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="score-loader.js"></script> 
     <script src="score-add.js"></script> 
+    <script src="follow.js"></script>
 </html>
+
+

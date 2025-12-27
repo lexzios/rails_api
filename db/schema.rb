@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_20_064214) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_27_020907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,19 +23,11 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_20_064214) do
 
   create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.string "following"
+    t.string "follower_id"
     t.string "idplay"
     t.date "last_update"
     t.string "name"
     t.decimal "score"
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "name"
-    t.string "photo"
-    t.integer "score"
     t.datetime "updated_at", null: false
   end
 end

@@ -29,7 +29,7 @@ highscoreForm.addEventListener('submit', async (e) => {
         if (response.ok) {
             console.log('Score saved!');
             highscoreForm.reset(); // Clear form fields
-            loadHighscores();      // Refresh the table to show the new entry
+            fetchScore();      // Refresh the table to show the new entry
         } else {
             console.error('Failed to save score');
         }
